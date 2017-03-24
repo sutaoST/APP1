@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>移动APP</title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.css"/>
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+    <style>
+    	.mui-control-content{
+    		height:480px ;
+    	}
+    </style>
+</head>
+<body>
+	<!-- 主界面不动、菜单移动 -->
+	<!-- 侧滑导航根容器 -->
+	<div class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+	  <!-- 菜单容器 -->
+	  <aside class="mui-off-canvas-left" id="offCanvasSide" style="background: #FFFFFF;">
+	    <!--<div class="mui-scroll-wrapper">
+	      <div class="mui-scroll">-->
+	        <!-- 菜单具体展示内容 -->
+	        <div class="mui-row" style="background:#4A5E79 ;">
+            	<div class="mui-col-sm-4 mui-col-xs-4" id="col">
+                	<span class="mui-icon mui-icon-gear" id="icon-gear"></span>
+                </div>
+                <div class="mui-col-sm-4 mui-col-xs-4" id="col">
+                	<span class="articl"><img src="imgs/4.jpg"></span>
+                </div>
+                <div class="mui-col-sm-4 mui-col-xs-4" id="col">
+                	<span class="mui-icon mui-icon-email" id="icon-gear" style="float: right; padding-right: 10px;"></span>
+                </div>
+            </div>
+            <div class="mui-row" style="background:#4A5E79 ;">
+                <div class="mui-col-sm-12 mui-col-xs-12"><span class="mui-icon mui-icon-contact mui-text-center" id="icon-user">用户名</span></div>
+            </div>
+            <div class="mui-row list">
+                <div class="mui-col-sm-4 mui-col-xs-4" style="border-right: 1px solid #C8C7CC;"><div class="mui-text-center">累计次数</div></div>
+                <div class="mui-col-sm-4 mui-col-xs-4" style="border-right: 1px solid #C8C7CC;"><div class="mui-text-center">关注</div></div>
+                <div class="mui-col-sm-4 mui-col-xs-4"><div class="mui-text-center">粉丝</div></div>
+            </div> 
+           <div class="mui-scroll-wrapper">
+               <div class="mui-scroll">
+                   <!--这里放置真实显示的DOM内容-->
+ 
+	         <ul class="mui-table-view" style="top:220px">
+                <li class="mui-table-view-cell">
+                    <a>签到</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a>会员中心</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a> 定时关闭</a>
+                </li>
+                 <li class="mui-table-view-cell">
+                    <a>听歌识曲</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a>音效设置</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a>音乐闹钟</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a>边听边玩</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a> 联通免流量</a>
+                </li>
+                 <li class="mui-table-view-cell">
+                    <a>帮助与反馈</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a>导入阿里星球数据</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a>导入天天动听数据</a>
+                </li>
+           </ul>
+             </div>
+           </div>
+            
+	        <div class="mui-row bottom" style="background: #C7C7CC;">
+               <div class="mui-col-sm-6 mui-col-xs-6 mui-text-center" id="style" style="border-right: 1px solid #fff;">设置</div>
+               <div class="mui-col-sm-6 mui-col-xs-6 mui-text-center" id="style">退出</div>   
+            </div>
+
+
+
+	      <!--</div>
+	    </div>-->
+	  </aside>
+	  <!-- 主页面容器 -->
+	  <div class="mui-inner-wrap">
+	    <!-- 主页面标题 -->
+	    <header class="mui-bar mui-bar-nav" style="background:orange;position: fixed;z-index: 9999; width: 100%;">
+	      <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left" href="#offCanvasSide" style="padding-top: 10px; padding-left: 5px;"></a>
+	      <div class="head">
+            <a class="mui-tab-item mui-active">
+		        <span class="mui-tab-label">我的</span>
+		    </a>
+		    <a class="mui-tab-item">
+		        <span class="mui-tab-label">推荐</span>
+		    </a>
+		    <a class="mui-tab-item">
+		        <span class="mui-tab-label">发现</span>
+		    </a>
+		    <a class="mui-tab-item" style="padding-top: 0px;">
+		        <span class="mui-icon mui-icon-search"></span>
+		    </a></div>
+	    </header>
+	    	<div class="mui-content">
+	    <!--<div class="mui-sliders" style="top:44px;">-->
+	        <div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted style-list">
+                <a class="mui-control-item" href="#item1">首页</a>
+                <a class="mui-control-item" href="#item2">精选集</a>
+                <a class="mui-control-item" href="#item3">排行榜</a>
+                <a class="mui-control-item" href="#item4">电台</a>
+                <a class="mui-control-item" href="#item5">MV</a>
+	        </div>	        	       
+	        <!--<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-2"></div>-->
+	        	<div>	
+	        	<!--首页-->	
+		        <div id="item1" class="mui-control-content mui-active">
+		            <div class="mui-content mui-scroll-wrapper">
+	      		   		<div class="mui-scroll">
+		                  <ul class="mui-table-view">
+                            <li class="mui-table-view-cell" id="imgs">
+                            	<div id="slider" class="mui-slider" >
+                            	  <div class="mui-slider-group mui-slider-loop">
+                            	    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                            	    <div class="mui-slider-item mui-slider-item-duplicate" id="pics">
+                            	      <a href="#">
+                            	        <img src="imgs/4.jpg">
+                            	      </a>
+                            	    </div>
+                            	    <!-- 第一张 -->
+                            	    <div class="mui-slider-item" id="pics">
+                            	      <a href="#">
+                            	        <img src="imgs/5.jpg">
+                            	      </a>
+                            	    </div>
+                            	    <!-- 第二张 -->
+                            	    <div class="mui-slider-item" id="pics">
+                            	      <a href="#">
+                            	        <img src="imgs/6.jpg">
+                            	      </a>
+                            	    </div>
+                            	    <!-- 第三张 -->
+                            	    <div class="mui-slider-item" id="pics">
+                            	      <a href="#">
+                            	        <img src="imgs/7.jpg">
+                            	      </a>
+                            	    </div>
+                            	    <!-- 第四张 -->
+                            	    <div class="mui-slider-item" id="pics">
+                            	      <a href="#">
+                            	        <img src="imgs/8.jpg">
+                            	      </a>
+                            	    </div>
+                            	    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                            	    <div class="mui-slider-item mui-slider-item-duplicate" id="pics">
+                            	      <a href="#">
+                            	        <img src="imgs/8.jpg">
+                            	      </a>
+                            	    </div>
+                            	  </div>
+                            	  <div class="mui-slider-indicator">
+                            	    <div class="mui-indicator mui-active"></div>
+                            	    <div class="mui-indicator"></div>
+                            	    <div class="mui-indicator"></div>
+                            	    <div class="mui-indicator"></div>
+                            	  </div>
+                            	</div>
+                            </li>
+                            <li class="mui-table-view-cell">
+                            	<div class="mui-row">
+                            	    <div class="mui-col-sm-3 mui-col-xs-3  mui-text-center">
+                            	    	<span class="iconfont icon-iconfontaixin" style="color: orange;"></span>
+                            	    	<span class="like">猜你喜欢</span>
+                            	    </div>
+                            	    <div class="mui-col-sm-3 mui-col-xs-3 mui-text-center">
+                            	    	<span class="iconfont icon-huo" style="color:red;"></span>
+                            	    	<span class="like">最新最热</span>
+                            	    </div>
+                            	    <div class="mui-col-sm-3 mui-col-xs-3 mui-text-center">
+                            	    	<span class="iconfont icon-naozhong" style="color:darkorange"></span>
+                            	    	<span class="like">别忘早餐</span>
+                            	    </div>
+                            	    <div class="mui-col-sm-3 mui-col-xs-3 mui-text-center">
+                            	    	<span class="iconfont icon-icon" style="color: dodgerblue;"></span>
+                            	    	<span class="like">听歌识曲</span>
+                            	    </div>
+                            	</div>
+                            </li>
+                            <!--第二部分-->
+                            <li class="mui-table-view-cell" style="background:#EFEFF4;">
+                            	<div class="mui-row">
+                            	    <div class="mui-col-sm-6 mui-col-xs-6 mui-text-left" style="font-weight:600;">为您推荐</div>
+                            	</div></li>
+                            <li class="mui-table-view-cell" style="background:#EFEFF4;">
+                             	<div class="mui-row">
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/9.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">全英音乐奖2017</span>
+                             	    </div>
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/10.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">鱼干铺里</span>
+                             	    </div>
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/11.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">还是想念</span>
+                             	    </div>
+                             	</div></li>
+                             	<li class="mui-table-view-cell" style="background:#EFEFF4;">
+                             	<div class="mui-row">
+                            	    <div class="mui-col-sm-6 mui-col-xs-6 mui-text-left" style="font-weight:600;">猜你喜欢</div>
+                            	</div></li>
+                            	<li class="mui-table-view-cell" style="background:#EFEFF4;">
+                             	<div class="mui-row">
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/12.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">今日推荐歌曲</span>
+                             	    </div>
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/13.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">夜空中最闪亮的星</span>
+                             	    </div>
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/14.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">E·MO·TION</span>
+                             	    </div>
+                             	</div></li>
+                             	<li class="mui-table-view-cell" style="background:#EFEFF4;">
+                             	<div class="mui-row">
+                            	    <div class="mui-col-sm-6 mui-col-xs-6 mui-text-left" style="font-weight:600;">新碟首发</div>
+                            	</div></li>
+                            	<li class="mui-table-view-cell" style="background:#EFEFF4;">
+                             	<div class="mui-row">
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/15.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">戏台</span>
+                             	    </div>
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/16.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">Cloudland</span>
+                             	    </div>
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/17.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">All Mine</span>
+                             	    </div>
+                             	</div></li>
+                             	<li class="mui-table-view-cell">
+                            	<div class="mui-row">
+                            	    <div class="mui-col-sm-3 mui-col-xs-3  mui-text-center">
+                            	    	<span class="iconfont icon-iconfontaixin" style="color: orange;"></span>
+                            	    	<span class="like">猜你喜欢</span>
+                            	    </div>
+                            	    <div class="mui-col-sm-3 mui-col-xs-3 mui-text-center">
+                            	    	<span class="iconfont icon-huo" style="color:red;"></span>
+                            	    	<span class="like">最新最热</span>
+                            	    </div>
+                            	    <div class="mui-col-sm-3 mui-col-xs-3 mui-text-center">
+                            	    	<span class="iconfont icon-naozhong" style="color:darkorange"></span>
+                            	    	<span class="like">别忘早餐</span>
+                            	    </div>
+                            	    <div class="mui-col-sm-3 mui-col-xs-3 mui-text-center">
+                            	    	<span class="iconfont icon-icon" style="color: dodgerblue;"></span>
+                            	    	<span class="like">听歌识曲</span>
+                            	    </div>
+                            	</div>
+                            </li>
+                            
+                            <li class="mui-table-view-cell" style="background:#EFEFF4;">
+                            	<div class="mui-row">
+                            	    <div class="mui-col-sm-6 mui-col-xs-6 mui-text-left" style="font-weight:600;">为您推荐</div>
+                            	</div></li>
+                            <li class="mui-table-view-cell" style="background:#EFEFF4;">
+                             	<div class="mui-row">
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/9.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">全英音乐奖2017</span>
+                             	    </div>
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/10.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">鱼干铺里</span>
+                             	    </div>
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/11.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">还是想念</span>
+                             	    </div>
+                             	</div></li>
+                             	<li class="mui-table-view-cell" style="background:#EFEFF4;">
+                             	<div class="mui-row">
+                            	    <div class="mui-col-sm-6 mui-col-xs-6 mui-text-left" style="font-weight:600;">猜你喜欢</div>
+                            	</div></li>
+                            	<li class="mui-table-view-cell" style="background:#EFEFF4;">
+                             	<div class="mui-row">
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/12.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">今日推荐歌曲</span>
+                             	    </div>
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/13.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">夜空中最闪亮的星</span>
+                             	    </div>
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/14.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">E·MO·TION</span>
+                             	    </div>
+                             	</div></li>
+                             	<li class="mui-table-view-cell" style="background:#EFEFF4;">
+                             	<div class="mui-row">
+                            	    <div class="mui-col-sm-6 mui-col-xs-6 mui-text-left" style="font-weight:600;">新碟首发</div>
+                            	</div></li>
+                            	<li class="mui-table-view-cell" style="background:#EFEFF4;">
+                             	<div class="mui-row">
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/15.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">戏台</span>
+                             	    </div>
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/16.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">Cloudland</span>
+                             	    </div>
+                             	    <div class="mui-col-sm-4 mui-col-xs-4">
+                             	    	<span class="all-imgs mui-text-center"><img src="imgs/17.jpg"></span>
+                             	    	<span class="all-imgs mui-text-center">All Mine</span>
+                             	    </div>
+                             	</div></li>
+                                </ul>
+		            </div></div>
+		        </div>
+		        <!--精选集部分-->
+	            <div id="item2" class="mui-control-content">
+	            	<div class="mui-content mui-scroll-wrapper">
+	      		   		<div class="mui-scroll">
+	                 <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                        	<div class="mui-row">
+                        	   <div class="mui-col-sm-12 mui-col-xs-12" style="font-weight: 600;">虾小米推荐精选集</div>
+                        	</div>
+                        	<ul class="mui-table-view">
+                        	    <li class="mui-table-view-cell mui-media">
+                        	        <a href="javascript:;">
+                        	            <img class="mui-media-object mui-pull-left" src="imgs/18.jpg">
+                        	            <div class="mui-media-body" style="font-size: 12px; font-weight: 600;color: blue;">如聂鲁达般的诗意音乐..让你的心在风中飞舞 
+                        	                <p class="mui-ellipsis">海边的春天，阳光与我寻找诗意。音乐响起，诗意近了，聂鲁达的诗在我脑海中飞舞徘徊。
+                        	                	渐渐地，在音乐与诗的汇集处，我眼前各种色调也褪去了颜色，清晨的浅蓝色开始从其他颜色的后面发散出来，先映蓝了海水，然后又...</p>
+                        	            </div>
+                        	        </a>
+                        	    </li>
+                        	    <li class="mui-table-view-cell mui-media">
+                        	        <a href="javascript:;">
+                        	            <img class="mui-media-object mui-pull-left" src="imgs/19.jpg">
+                        	            <div class="mui-media-body" style="font-size: 12px; font-weight: 600;color: blue;">少年，不要老去
+                        	                <p class="mui-ellipsis">这个集子是做过的所有集子中(我装作很多的样子)自己最喜欢的，里面的歌都是曾翻来覆去听的。然而不受小编青睐，
+                        	                	于是自己打个广告，倾情推荐。灵感来源于扎西拉姆的一首诗。 少年 少年你依旧青涩如初吗 在我...</p>
+                        	            </div>
+                        	        </a>
+                        	    </li>
+                        	    <li class="mui-table-view-cell mui-media">
+                        	        <a href="javascript:;">
+                        	            <img class="mui-media-object mui-pull-left" src="imgs/20.jpg">
+                        	            <div class="mui-media-body" style="font-size: 12px; font-weight: 600;color: blue;"> 那些被我们遗忘的有故事的好歌 
+                        	                <p class="mui-ellipsis">不多说话 就只是唱唱歌 你就会明白</p>
+                        	            </div>
+                        	        </a>
+                        	    </li>
+                        	    <li class="mui-table-view-cell mui-media">
+                        	        <a href="javascript:;">
+                        	            <img class="mui-media-object mui-pull-left" src="imgs/21.jpg">
+                        	            <div class="mui-media-body" style="font-size: 12px; font-weight: 600;color: blue;"> 世间绝响 • 天籁之音———纯音乐专辑 
+                        	                <p class="mui-ellipsis">今夜，我终是抛不开回忆，于是，将绵长的思绪做成古琴，让琴声在这幽幽的古道边悄然响起。我，依如当初的模样，用纯净的月光，
+                        	                	编织一双翅膀，为爱飞扬……</p>
+                        	            </div>
+                        	        </a>
+                        	    </li>
+                        	    <li class="mui-table-view-cell mui-media">
+                        	        <a href="javascript:;">
+                        	            <img class="mui-media-object mui-pull-left" src="imgs/22.jpg">
+                        	            <div class="mui-media-body" style="font-size: 12px; font-weight: 600;color: blue;"> 与爱情无关，和寂寞有染 
+                        	                <p class="mui-ellipsis">很好听的歌，希望大家能喜欢</p>
+                        	            </div>
+                        	        </a>
+                        	    </li>                           	
+                        	</ul>
+                        </li>
+                        <li class="mui-table-view-cell">
+                        	<div class="mui-row"><div class="mui-col-sm-12 mui-col-xs-12" style="font-weight: 600;">精选集品牌专区</div></div>
+                        	<div class="mui-row">
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/23.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">花团锦簇の精选集
+                        	    	                <p class="mui-ellipsis">已收录精选集：1268 张 by: frezing @2011-10-10</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/24.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">正小守和他的小伙伴们
+                        	    	                <p class="mui-ellipsis">已收录精选集：4354 张 by: 正小守 @2011-11-01</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>
+                        	</div>
+                        	<div class="mui-row">
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/25.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">放學後的茶會
+                        	    	                <p class="mui-ellipsis">已收录精选集：2261 张 by: 菜籽酱 @2011-11-04</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/26.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">我的世界只剩下音乐、文字
+                        	    	                <p class="mui-ellipsis">已收录精选集：4175 张 by: 念安娜。 @2013-03-04</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>
+                        	</div>
+                        	<div class="mui-row">
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/23.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">放學後的茶會
+                        	    	                <p class="mui-ellipsis">已收录精选集：2261 张 by: 菜籽酱 @2011-11-04</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/24.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">我的世界只剩下音乐、文字
+                        	    	                <p class="mui-ellipsis">已收录精选集：4175 张 by: 念安娜。 @2013-03-04</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>
+                        	<!--第二部分-->    
+                        	<li class="mui-table-view-cell">
+                        	<div class="mui-row"><div class="mui-col-sm-12 mui-col-xs-12" style="font-weight: 600;">精选集品牌专区</div></div>
+                        	<div class="mui-row">
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/23.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">花团锦簇の精选集
+                        	    	                <p class="mui-ellipsis">已收录精选集：1268 张 by: frezing @2011-10-10</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/24.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">正小守和他的小伙伴们
+                        	    	                <p class="mui-ellipsis">已收录精选集：4354 张 by: 正小守 @2011-11-01</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>
+                        	</div>
+                        	<div class="mui-row">
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/25.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">放學後的茶會
+                        	    	                <p class="mui-ellipsis">已收录精选集：2261 张 by: 菜籽酱 @2011-11-04</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/26.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">我的世界只剩下音乐、文字
+                        	    	                <p class="mui-ellipsis">已收录精选集：4175 张 by: 念安娜。 @2013-03-04</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>
+                        	</div>
+                        	<div class="mui-row">
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/23.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">放學後的茶會
+                        	    	                <p class="mui-ellipsis">已收录精选集：2261 张 by: 菜籽酱 @2011-11-04</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/24.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">我的世界只剩下音乐、文字
+                        	    	                <p class="mui-ellipsis">已收录精选集：4175 张 by: 念安娜。 @2013-03-04</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>    
+                        	    <li class="mui-table-view-cell">
+                        	<div class="mui-row"><div class="mui-col-sm-12 mui-col-xs-12" style="font-weight: 600;">精选集品牌专区</div></div>
+                        	<div class="mui-row">
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/23.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">花团锦簇の精选集
+                        	    	                <p class="mui-ellipsis">已收录精选集：1268 张 by: frezing @2011-10-10</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/24.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">正小守和他的小伙伴们
+                        	    	                <p class="mui-ellipsis">已收录精选集：4354 张 by: 正小守 @2011-11-01</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>
+                        	</div>
+                        	<div class="mui-row">
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/25.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">放學後的茶會
+                        	    	                <p class="mui-ellipsis">已收录精选集：2261 张 by: 菜籽酱 @2011-11-04</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/26.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">我的世界只剩下音乐、文字
+                        	    	                <p class="mui-ellipsis">已收录精选集：4175 张 by: 念安娜。 @2013-03-04</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>
+                        	</div>
+                        	<div class="mui-row">
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/23.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">放學後的茶會
+                        	    	                <p class="mui-ellipsis">已收录精选集：2261 张 by: 菜籽酱 @2011-11-04</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>
+                        	    <div class="mui-col-sm-6 mui-col-xs-6">
+                        	    	<ul class="mui-table-view">
+                        	    	    <li class="mui-table-view-cell mui-media" style="padding: 11px 5px;">
+                        	    	        <a href="javascript:;">
+                        	    	            <img class="mui-media-object mui-pull-left" src="imgs/24.jpg">
+                        	    	            <div class="mui-media-body" style="font-size: 10px; font-weight: 600;color: blue;">我的世界只剩下音乐、文字
+                        	    	                <p class="mui-ellipsis">已收录精选集：4175 张 by: 念安娜。 @2013-03-04</p>
+                        	    	            </div>
+                        	    	        </a>
+                        	    	    </li>
+                        	    	</ul>
+                        	    </div>  	    
+                        	</div>
+                        </li>
+                    </ul>
+	            </div></div></div>
+	            <!-- 排行榜 -->
+	            <div id="item3" class="mui-control-content">
+	            	<div class="mui-content mui-scroll-wrapper">
+	      		   		<div class="mui-scroll">
+	                <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                        	<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">01
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/27.jpg">
+                                	            <div class="mui-media-body">药
+                                	            	<p class="mui-ellipsis">张晓钰</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">90.35<span class="db">打榜</span></div>
+                        		</div></ul>
+                        		<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">02
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/28.jpg">
+                                	            <div class="mui-media-body">成都
+                                	            	<p class="mui-ellipsis">赵雷</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">78.95<span class="db">打榜</span></div>
+                        		</div> </ul>
+                        		<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">03
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/27.jpg">
+                                	            <div class="mui-media-body">不会怕
+                                	            	<p class="mui-ellipsis">张晓钰</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">73.34<span class="db">打榜</span></div>
+                        		</div> </ul>
+                        		<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">04
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/29.jpg">
+                                	            <div class="mui-media-body">脱胎换骨
+                                	            	<p class="mui-ellipsis">谭咏麟, 五月天</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">71.06<span class="db">打榜</span></div>
+                        		</div> </ul>
+                        		<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">05
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/30.jpg">
+                                	            <div class="mui-media-body">繁花
+                                	            	<p class="mui-ellipsis">董贞</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">81.43<span class="db">打榜</span></div>
+                        		</div> </ul>
+                        		<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">06
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/27.jpg">
+                                	            <div class="mui-media-body">拍手
+                                	            	<p class="mui-ellipsis">张晓钰</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">70.58<span class="db">打榜</span></div>
+                        		</div> </ul>
+                        		<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">07
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/27.jpg">
+                                	            <div class="mui-media-body">Cool Girl
+                                	            	<p class="mui-ellipsis">张晓钰</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">70.26<span class="db">打榜</span></div>
+                        		</div> </ul>
+                        		<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">08
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/31.jpg">
+                                	            <div class="mui-media-body">越清醒越孤独
+                                	            	<p class="mui-ellipsis">信</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">69.90<span class="db">打榜</span></div>
+                        		</div> </ul>
+                        		<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">09
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/32.jpg">
+                                	            <div class="mui-media-body">甜蜜时间
+                                	            	<p class="mui-ellipsis">金雯昕</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">69.06<span class="db">打榜</span></div>
+                        		</div></ul>
+                        </li>
+                        <!--第二部分-->
+                         <li class="mui-table-view-cell">
+                        	<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">10
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/27.jpg">
+                                	            <div class="mui-media-body">药
+                                	            	<p class="mui-ellipsis">张晓钰</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">90.35<span class="db">打榜</span></div>
+                        		</div></ul>
+                        		<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">11
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/28.jpg">
+                                	            <div class="mui-media-body">成都
+                                	            	<p class="mui-ellipsis">赵雷</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">78.95<span class="db">打榜</span></div>
+                        		</div> </ul>
+                        		<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">12
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/27.jpg">
+                                	            <div class="mui-media-body">不会怕
+                                	            	<p class="mui-ellipsis">张晓钰</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">73.34<span class="db">打榜</span></div>
+                        		</div> </ul>
+                        		<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">13
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/29.jpg">
+                                	            <div class="mui-media-body">脱胎换骨
+                                	            	<p class="mui-ellipsis">谭咏麟, 五月天</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">71.06<span class="db">打榜</span></div>
+                        		</div> </ul>
+                        		<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">14
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/30.jpg">
+                                	            <div class="mui-media-body">繁花
+                                	            	<p class="mui-ellipsis">董贞</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">81.43<span class="db">打榜</span></div>
+                        		</div> </ul>
+                        		<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">15
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/27.jpg">
+                                	            <div class="mui-media-body">拍手
+                                	            	<p class="mui-ellipsis">张晓钰</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">70.58<span class="db">打榜</span></div>
+                        		</div> </ul>
+                        		<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">16
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/27.jpg">
+                                	            <div class="mui-media-body">Cool Girl
+                                	            	<p class="mui-ellipsis">张晓钰</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">70.26<span class="db">打榜</span></div>
+                        		</div> </ul>
+                        		<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">17
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/31.jpg">
+                                	            <div class="mui-media-body">越清醒越孤独
+                                	            	<p class="mui-ellipsis">信</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">69.90<span class="db">打榜</span></div>
+                        		</div> </ul>
+                        		<ul class="mui-table-view">
+                        		<div class="mui-row">
+                        		    <div class="mui-col-sm-2 mui-col-xs-2" style="line-height: 63px;">18
+                        		    </div>
+                        		    <div class="mui-col-sm-6 mui-col-xs-6">
+                        		    	<li class="mui-table-view-cell mui-media">
+                                	        <a href="javascript:;">
+                                	            <img class="mui-media-object mui-pull-left" src="imgs/32.jpg">
+                                	            <div class="mui-media-body">甜蜜时间
+                                	            	<p class="mui-ellipsis">金雯昕</p>
+                                	            </div>
+                                	        </a></li>
+                        		    </div>
+                        		    <div class="mui-col-sm-4 mui-col-xs-4" style="line-height: 63px;">69.06<span class="db">打榜</span></div>
+                        		</div></ul>
+                        </li>  
+                    </ul>
+	            </div></div></div>
+	            <!-- 电台 -->
+                <div id="item4" class="mui-control-content">
+                	<div class="mui-content mui-scroll-wrapper">
+	      		   		<div class="mui-scroll">
+                    <ul class="mui-table-view">
+                        <div class="mui-row">
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/33.jpg">
+                        	            <div class="mui-media-body">우주의 별이 O.S.T</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/34.jpg">
+                        	            <div class="mui-media-body">FIVE</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>                                       
+                        </div>
+                         <div class="mui-row">
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/35.jpg">
+                        	            <div class="mui-media-body">나의 외로움이 널 부를 때</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/36.jpg">
+                        	            <div class="mui-media-body">Mystery of VENUS</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>                                       
+                        </div>
+                        <div class="mui-row">
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/37.jpg">
+                        	            <div class="mui-media-body">混声 MXTRSNDZ VOL.3</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/38.jpg">
+                        	            <div class="mui-media-body">永恒与一日</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>                                       
+                        </div>
+                        <!--第二部分-->
+                        <div class="mui-row">
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/33.jpg">
+                        	            <div class="mui-media-body">우주의 별이 O.S.T</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/34.jpg">
+                        	            <div class="mui-media-body">FIVE</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>                                       
+                        </div>
+                         <div class="mui-row">
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/35.jpg">
+                        	            <div class="mui-media-body">나의 외로움이 널 부를 때</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/36.jpg">
+                        	            <div class="mui-media-body">Mystery of VENUS</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>                                       
+                        </div>
+                        <div class="mui-row">
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/37.jpg">
+                        	            <div class="mui-media-body">混声 MXTRSNDZ VOL.3</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/38.jpg">
+                        	            <div class="mui-media-body">永恒与一日</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>                                       
+                        </div>  
+                    </ul>
+                </div></div></div>
+    		   <!-- MV -->
+                <div id="item5" class="mui-slider-item mui-control-content">
+                	<div class="mui-content mui-scroll-wrapper">
+	      		   		<div class="mui-scroll">
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                        	<div class="mui-row">
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/39.jpg">
+                        	            <div class="mui-media-body">让你忍不住单曲循环的歌曲（意大...</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/40.jpg">
+                        	            <div class="mui-media-body">让你忍不住单曲循环的歌曲私藏中毒篇（Se7eN首感人流泪的MV）</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>                                       
+                        </div>
+                        </li>
+                        <li class="mui-table-view-cell">
+                        	<div class="mui-row">
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/41.jpg">
+                        	            <div class="mui-media-body">瞬间征服你挑剔的耳朵（13首经典MV）</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/42.jpg">
+                        	            <div class="mui-media-body">唯美婚礼mv 背景音乐</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>                                       
+                        </div>
+                        </li>  
+                        <li class="mui-table-view-cell">
+                        	<div class="mui-row">
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/43.jpg">
+                        	            <div class="mui-media-body">婚礼MV首选music Wedding Music</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/44.jpg">
+                        	            <div class="mui-media-body">婚礼MV配乐特别篇之-----前奏控二</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>                                       
+                        </div>
+                        </li>  
+                    </ul>
+                    <!--第二部分-->
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                        	<div class="mui-row">
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/39.jpg">
+                        	            <div class="mui-media-body">让你忍不住单曲循环的歌曲（意大...</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/40.jpg">
+                        	            <div class="mui-media-body">让你忍不住单曲循环的歌曲私藏中毒篇（Se7eN首感人流泪的MV）</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>                                       
+                        </div>
+                        </li>
+                        <li class="mui-table-view-cell">
+                        	<div class="mui-row">
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/41.jpg">
+                        	            <div class="mui-media-body">瞬间征服你挑剔的耳朵（13首经典MV）</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/42.jpg">
+                        	            <div class="mui-media-body">唯美婚礼mv 背景音乐</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>                                       
+                        </div>
+                        </li>  
+                        <li class="mui-table-view-cell">
+                        	<div class="mui-row">
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/43.jpg">
+                        	            <div class="mui-media-body">婚礼MV首选music Wedding Music</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>
+                            <div class="mui-col-sm-6 mui-col-xs-6">
+                            	<ul class="mui-table-view mui-grid-view mui-text-center">
+                            	<li class="mui-table-view-cell mui-media mui-col-xs-6" style="width: 100%;">
+                        	        <a href="#">
+                        	            <img class="mui-media-object" src="imgs/44.jpg">
+                        	            <div class="mui-media-body">婚礼MV配乐特别篇之-----前奏控二</div>
+                        	        </a>
+                        	    </li></ul>
+                            </div>                                       
+                        </div>
+                        </li>  
+                    </ul>
+                </div></div></div>   
+	        	</div>	    		
+	    	</div>
+	    </div>
+	    
+	    <!-- 主界面具体展示内容 -->
+	    <!--<div class="mui-content mui-scroll-wrapper">
+	      <div class="mui-scroll">
+	                
+	      </div>
+	    </div> -->
+	    
+	    <div class="mui-off-canvas-backdrop"></div>
+	    
+	  </div>
+	</div>
+	 <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    mui.init();
+	//获得slider插件对象
+	var gallery = mui('.mui-slider');
+	gallery.slider({
+	  interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+	});
+	mui('.mui-scroll-wrapper').scroll({
+	deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+});
+	
+	</script>
+	
+</body>
+</html>
